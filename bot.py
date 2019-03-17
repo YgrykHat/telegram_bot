@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# 538024314
-# https://api.thecatapi.com/v1/images/search
 import config
 import telebot
 import random
