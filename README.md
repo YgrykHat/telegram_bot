@@ -1,7 +1,7 @@
 # telegram_bot
 
-\ndebian/ubuntu
-sudo apt install python3\n
-sudo apt install python3-pip\n
-pip install -r requirements.txt\n
-python3 bot.py\n
+debian/ubuntu
+sudo apt install python3
+sudo apt install python3-pip
+pip install -r requirements.txt
+python3 bot.py
