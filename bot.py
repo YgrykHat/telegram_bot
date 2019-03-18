@@ -51,7 +51,7 @@ def repeat_all_messages(message):
 		if True:
 			text += x
 	print(text)
-	bot.send_message('538024314', text)
+	bot.send_message(config.chat, text)
 
 def main():
     updater = Updater(bot)
