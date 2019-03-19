@@ -5,13 +5,12 @@ import sys, random, os, time
 from telegram.ext import Updater, InlineQueryHandler, CommandHandler
 import requests
 import re
+import os.path
 
-start_mess = '🧭/help -- none\n🐕/dog -- sends a photo of a dog\n🎌/anime -- sends a picture in anime styles'
+start_mess = 'start message'
 help_mess = 'I can not help you'
 
 bot = telebot.TeleBot(config.token)
-
-
 
 @bot.message_handler(commands = ['img'])
 def anime(message):
