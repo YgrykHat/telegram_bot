@@ -13,14 +13,14 @@ bot = telebot.TeleBot(config.token)
 
 
 
-@bot.message_handler(commands = ['anime'])
+@bot.message_handler(commands = ['img'])
 def anime(message):
 	l = os.listdir('img')
 	score = 0
 	for i in l:
 		score += 1
 	r = random.randint(1, score)
-	addres = str(r) + '.png'
+	addres = str(r)
 	bot.send_photo(message.chat.id, open(r'img\{0}'.format(addres), 'rb'))
 
 def get_url_dog():
