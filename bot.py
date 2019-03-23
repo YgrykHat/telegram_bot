@@ -22,7 +22,7 @@ def anime(message):
 			score += 1
 		r = random.randint(1, score)
 		addres = str(r) + '.png'
-		bot.send_photo(message.chat.id, open(r'img\{0}'.format(addres), 'rb'))
+		bot.send_photo(message.chat.id, open('img/{0}'.format(addres), 'rb'))
 	else:
 		pass
 
