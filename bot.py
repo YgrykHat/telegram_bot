@@ -69,7 +69,7 @@ def main():
     updater.start_polling()
     updater.idle()
 
-print('done')
+print('Done')
 
 if __name__ == '__main__':
      bot.polling(none_stop = True)
