@@ -6,11 +6,19 @@ from telegram.ext import Updater, InlineQueryHandler, CommandHandler
 import requests
 import re
 import os.path
+import subprocess
 
 start_mess = 'start message'
 help_mess = 'I can not help you'
 
 bot = telebot.TeleBot(config.token)
+
+zi = os.path.exists('img.zip')
+
+if zi == True:
+	subprocess.Popen(["python", "unziper.py"])
+else:
+	pass
 
 @bot.message_handler(commands = ['img'])
 def anime(message):
