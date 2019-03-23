@@ -53,7 +53,7 @@ def dog(message):
     chat_id = message.chat.id
     bot.send_photo(chat_id=chat_id, photo=url)
 
-@bot.message_handler(content_types = ["text"])
+@bot.message_handler(content_types = ['text'])
 def repeat_all_messages(message):
 	text = ''
 	for x in message.text:
