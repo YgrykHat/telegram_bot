@@ -1,16 +1,34 @@
+print('0%')
 import config
+print('7%')
 import telebot
+print('14%')
 import random
-import sys, random, os, time
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+print('21%')
+import sys
+print('28%')
+import random
+print('35%')
+import os
+print('42%')
+import time
+print('49%')
 import requests
+print('56%')
 import re
+print('63%')
 import os.path
+print('70%')
 import subprocess
+print('77%')
+from telegram.ext import Updater
+print('84%')
+from telegram.ext import InlineQueryHandler
+print('94%')
+from telegram.ext import CommandHandler
+print('100%')
 
 bot = telebot.TeleBot(config.token)
-
-#chat = '' # here you need to enter the chat ID in which the bot will write.
 
 zi = os.path.exists('img.zip')
 
@@ -18,6 +36,11 @@ if zi == True:
 	subprocess.Popen(['python', 'unziper.py'])
 else:
 	pass
+
+@bot.message_handler(commands = ['id', 'chat'])
+def id(message):
+        bot.send_message(message.chat.id, message.chat.id)
+        print(message.chat.id)
 
 @bot.message_handler(commands = ['img'])
 def anime(message):
@@ -37,25 +60,9 @@ def get_url_dog():
     url = contents['url']
     return url
 
-@bot.message_handler(commands = [config.key])
-def id(message):
-	f = open('id.txt', 'w')
-	f.write(str(message.chat.id))
-	f.close()
-	print(message.chat.id)
-
-di = os.path.exists('id.txt')
-if di == True:
-	f = open('id.txt')		
-	chat = f.read()
-	f.close()
-else:
-	pass
-	
 @bot.message_handler(commands = ['start'])
 def start(message):
 	bot.send_message(message.chat.id, config.start_mess)
-	# print(message.chat.id)
 
 @bot.message_handler(commands = ['help'])
 def help(message):
@@ -64,12 +71,12 @@ def help(message):
 @bot.message_handler(commands = ['dog'])
 def dog(message):
     url = get_url_dog()
-    chat.id = message.chat.id
     bot.send_photo(message.chat.id, photo = url)
 
 @bot.message_handler(content_types = ['text'])
 def repeat_all_messages(message):
-	 bot.send_message(chat, message.text) # if you want the bot to send all messages a certain chat.
+	name = message.from_user.first_name
+	bot.send_message(config.chat, '{0} : {1}'.format(name, message.text)) # if you want the bot to send all messages a certain chat.
 
 def main():
     updater = Updater(bot)
